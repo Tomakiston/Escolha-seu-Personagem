@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha seu personagem</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: teal;
+        }
+        h1 {
+            margin-top: 200px;
+            margin-bottom: 60px;
+            color: black;
+        }
+        .characters {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .character {
+            cursor: pointer;
+            transition: transform 0.3s, opacity 0.3s;
+            border-radius: 10px;
+        }
+        .character:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escolha seu personagem</h1>
+    <div class="characters">
+        <img src="warrior.png" alt="Guerreiro" class="character" onclick="chooseCharacter('warrior')" width="170">
+        <img src="mage.png" alt="Mago Patolino" class="character" onclick="chooseCharacter('mage')" width="250">
+        <img src="horse.png" alt="Cavalo" class="character" onclick="chooseCharacter('horse')" width="400">
+    </div>
+    <p id="message"></p>
+
+    <script>
+        function chooseCharacter(choice) {
+            let message;
+
+            switch (choice) {
+                case "warrior":
+                    message = "Pegue sua espada e escudo, e vá para o campo de batalha!";
+                    break;
+                case "mage":
+                    message = "CONTEMPLEM O MAGOOOOO! COM SEUS PODEREEEEES!! INCRÍVEL PODEREEEEEES!!!"
+                    break;
+                case "horse":
+                    message = "Pocotó"
+                    break;
+                default:
+                    break;
+            }
+
+            document.getElementById("message").innerText = message;
+        }
+    </script>
+</body>
+</html>
